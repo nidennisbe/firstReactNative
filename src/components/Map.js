@@ -15,7 +15,7 @@ import {
 
 export default class Map extends Component {
   static navigationOptions = {
-        title: 'Weather',
+        title: 'Map',
         headerTintColor: '#ffffff',
         headerStyle: {
           backgroundColor: '#2F95D6',
@@ -42,6 +42,13 @@ export default class Map extends Component {
     map: {
    ...StyleSheet.absoluteFillObject,
  },
+ container: {
+  ...StyleSheet.absoluteFillObject,
+  height: 400,
+  width: 400,
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+},
 
    buttonLink: {
      color:'#242424',
@@ -50,11 +57,18 @@ export default class Map extends Component {
       return(
           <View>
           <Text style={style.textSponsorHeading}>AUCKLAND </Text>
-          <WeatherWidget
-               api={"137a53d3b88a70c07023e3dc42dadeb9"}
-               lat={"36.8485"}
-               lng={"174.7633"}
-               />
+            <View style ={style.container}>
+            <MapView
+              style={style.map}
+              region={{
+                latitude: 37.78825,
+                longitude: -122.4324,
+                latitudeDelta: 0.015,
+                longitudeDelta: 0.0121,
+              }}
+            >
+            </MapView>
+          </View>
           </View>
 
       );
