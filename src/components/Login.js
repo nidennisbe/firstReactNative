@@ -97,8 +97,8 @@ export default class Home extends Component {
         resizeMode: 'cover', // or 'stretch'
     },
     textContainer: {
+
         color:'#ffffff',
-        fontSize:20,
         position: 'absolute',
         top: 0,
         padding:20,
@@ -106,13 +106,20 @@ export default class Home extends Component {
         left: 0,
         right: 0
     },
+    textDesc: {
+      fontSize:20,
+      padding:10,
+      borderRadius:15,
+        color:'#474747',
+        backgroundColor:'rgba(255, 255, 255, 0.85)',
+},
 
     });
     return(
       <View style={ style.container }>
         <ImageBackground source={{uri: 'http://www.obc.co.nz/media/12202/sil_12.jpg'}} style={style.backgroundImage} >
               <View style={ style.textContainer }>
-                              <Text  style={ style.loginForm }>Outboard Boating Club of Auckland
+                              <Text  style={ style.textDesc }>Outboard Boating Club of Auckland
                                       At the OBC, we love boating as much as you do! That's why you'll
                                       find all the facilities you need to make your boating experience
                                       easy and pleasurable from fueling up to wash down  in our convenient
@@ -140,11 +147,7 @@ export default class Home extends Component {
                 title="Weather"
                 accessibilityLabel="Learn more about this purple button"
               />
-              <Button
-                  style={style.buttonblue}
-                  title="Alert"
-                  accessibilityLabel="Learn more about this purple button"
-                />
+
               <Button
                     style={style.buttonblue}
                     onPress ={() => this.props.navigation.navigate("Map")}
@@ -159,10 +162,15 @@ export default class Home extends Component {
                     />
 
                     <Button
-                      onPress ={() => this.props.navigation.navigate("Weather")}
+                      onPress ={() => this.props.navigation.navigate("Sponsors")}
                       style={style.buttonblue}
-                      title="Logout"
+                      title="Sponsors"
                       />
+                      <Button
+                        onPress ={() => this.props.navigation.navigate("Sponsors")}
+                        style={style.buttonblue}
+                        title="   "
+                        />
                 </View>
 
       </View>

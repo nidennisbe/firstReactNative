@@ -56,7 +56,7 @@ export default class Camera extends Component {
       justifyContent: 'center',
       alignItems: 'center',
       width: '100%',
-    height: '30%',
+      height: '30%',
     }
 
 });

@@ -14,6 +14,14 @@ import {
 } from 'react-native';
 
 export default class Map extends Component {
+  constructor (props){
+    super(props);
+    this.state = {
+    latitude: null,
+    longitude: null,
+    error: null,
+};
+  }
   static navigationOptions = {
         title: 'Map',
         headerTintColor: '#ffffff',
@@ -25,6 +33,22 @@ export default class Map extends Component {
           fontSize: 18,
         },
     };
+
+
+
+componentDidMount() {
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      this.setState({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+        error: null,
+      });
+    },
+    (error) => this.setState({ error: error.message }),
+    { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+  );
+}
   render() {
     const uri = 'http://stackoverflow.com/questions/35531679/react-native-open-links-in-browser';
     const { region } = this.props;
@@ -45,7 +69,6 @@ export default class Map extends Component {
  container: {
   ...StyleSheet.absoluteFillObject,
   height: 400,
-  width: 400,
   justifyContent: 'flex-end',
   alignItems: 'center',
 },
@@ -55,20 +78,21 @@ export default class Map extends Component {
    }
 });
       return(
-          <View>
+
             <View style ={style.container}>
             <MapView
+              showsUserLocation={true}
               style={style.map}
               region={{
-                latitude: 37.78825,
-                longitude: -122.4324,
+                latitude: this.state.latitude,
+                longitude:this.state.longitude,
                 latitudeDelta: 0.015,
                 longitudeDelta: 0.0121,
               }}
             >
             </MapView>
           </View>
-          </View>
+
 
       );
 

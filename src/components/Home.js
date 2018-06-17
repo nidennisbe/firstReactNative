@@ -105,8 +105,14 @@ static navigationOptions = { header: null };
              placeholder="Password"
              onChangeText={(text) => this.setState({text})}
            />
-         <View style={{padding: 10,alignItems: 'center',justifyContent:'center'}}>
 
+
+           <Text style={{padding: 10, fontSize: 22}}>
+             {this.state.text.split(' ').map((word) => word && this.state.text).join(' ')}
+           </Text>
+         </View>
+
+         <View style={{padding: 10,alignItems: 'center',justifyContent:'center'}}>
 
            <Button
                onPress ={() => this.props.navigation.navigate("Login")}
@@ -115,11 +121,6 @@ static navigationOptions = { header: null };
                color= "#EC894D"
                accessibilityLabel="Learn more about this purple button"
              />
-         </View>
-
-           <Text style={{padding: 10, fontSize: 22}}>
-             {this.state.text.split(' ').map((word) => word && this.state.text).join(' ')}
-           </Text>
          </View>
 
             <View style={style.footer}>
