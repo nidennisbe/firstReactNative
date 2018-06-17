@@ -7,6 +7,7 @@ import {
   Text,
   Alert,
   Image,
+  ImageBackground,
   Button,
   StyleSheet,
   TextInput,
@@ -20,16 +21,15 @@ export default class Home extends Component {
   }
 
   static navigationOptions = {
-        title: 'Home',
+        title: 'WELCOME TO OBC AUCKLAND',
         headerTintColor: '#ffffff',
         headerStyle: {
-          backgroundColor: '#ffffff',
+          backgroundColor: '#21c5e4',
           borderBottomColor: '#ffffff',
-          borderBottomWidth: 3,
         },
         headerTitleStyle: {
           fontSize: 18,
-          color:'#1d1d1d',
+          color:'#ffffff',
         },
     };
 
@@ -38,7 +38,7 @@ export default class Home extends Component {
     const style = StyleSheet.create({
 
     buttonblue: {
-    color: '#dea944',
+    color: '#21c5e4',
     fontWeight: 'bold',
     fontSize: 40,
     alignItems:'center',
@@ -68,7 +68,7 @@ export default class Home extends Component {
 
     footerText: {
     textAlign: 'center',
-    color:'white',
+    color:'#ffffff',
     fontWeight:'bold',
     alignItems:'center',
     fontSize:18,
@@ -83,13 +83,45 @@ export default class Home extends Component {
       marginTop:20,
 
     },
+    backgroudImgStyle:
+    {
+      flex: 1,
+      resizeMode:'cover',
+    },
+
+    container: {
+        flex: 1,
+    },
+    backgroundImage: {
+        flex: 1,
+        resizeMode: 'cover', // or 'stretch'
+    },
+    textContainer: {
+        color:'#ffffff',
+        fontSize:20,
+        position: 'absolute',
+        top: 0,
+        padding:20,
+        bottom: 0,
+        left: 0,
+        right: 0
+    },
 
     });
     return(
-      <View style={style.mainviewStyle}>
-        <Image source={{uri: 'https://i.pinimg.com/originals/d6/0d/22/d60d22ea3e95266b9c4dbfc986f472b2.jpg'}}
-               style={{flex: 1,width: 400,}}
-               />
+      <View style={ style.container }>
+        <ImageBackground source={{uri: 'http://www.obc.co.nz/media/12202/sil_12.jpg'}} style={style.backgroundImage} >
+              <View style={ style.textContainer }>
+                              <Text  style={ style.loginForm }>Outboard Boating Club of Auckland
+                                      At the OBC, we love boating as much as you do! That's why you'll
+                                      find all the facilities you need to make your boating experience
+                                      easy and pleasurable from fueling up to wash down  in our convenient
+                                       Auckland location.
+                              </Text>
+              </View>
+        </ImageBackground>
+
+
 
 
           <View style={style.footer}>
@@ -98,7 +130,7 @@ export default class Home extends Component {
                 onPress ={() => this.props.navigation.navigate("News")}
                 style={style.buttonblue}
                 title="News"
-                color= "#EC894D"
+                color= "#21c5e4"
                 accessibilityLabel="Learn more about this purple button"
               />
 
@@ -132,9 +164,7 @@ export default class Home extends Component {
                       title="Logout"
                       />
                 </View>
-        <View style={{ alignSelf:'stretch',alignItems: 'center',flex: 1, flexDirection: 'row'}}>
 
-          </View>
       </View>
 );
 

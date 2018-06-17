@@ -20,7 +20,6 @@ export default class Map extends Component {
         headerStyle: {
           backgroundColor: '#2F95D6',
           borderBottomColor: '#ffffff',
-          borderBottomWidth: 3,
         },
         headerTitleStyle: {
           fontSize: 18,
@@ -40,6 +39,7 @@ export default class Map extends Component {
       justifyContent: 'center',
     },
     map: {
+      flex:1,
    ...StyleSheet.absoluteFillObject,
  },
  container: {
@@ -56,7 +56,6 @@ export default class Map extends Component {
 });
       return(
           <View>
-          <Text style={style.textSponsorHeading}>AUCKLAND </Text>
             <View style ={style.container}>
             <MapView
               style={style.map}

@@ -25,7 +25,6 @@ export default class News extends Component {
         headerStyle: {
           backgroundColor: '#e9c724',
           borderBottomColor: '#ffffff',
-          borderBottomWidth: 3,
         },
         headerTitleStyle: {
           fontSize: 18,

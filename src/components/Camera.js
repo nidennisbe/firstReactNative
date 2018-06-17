@@ -35,37 +35,40 @@ export default class Camera extends Component {
     const { region } = this.props;
     console.log(region);
     const style = StyleSheet.create({
-    text: {
-      textAlign: 'center',
-      color:'red',
-      fontWeight:'bold',
-      alignItems:'center',
-      fontSize:28,
-      justifyContent: 'center',
-    },
+
+      text:{
+        fontWeight:'900',
+        color:'white',
+      },
     ImageContainer: {
       borderRadius: 10,
-      width: 250,
-      height: 250,
+      width: 100,
+      height: 80,
       borderColor: '#9B9B9B',
       borderWidth: 1 / PixelRatio.get(),
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#CDDC39',
+      backgroundColor: '#ddae39',
 
     },
+    container:{
+      flex:1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+    height: '30%',
+    }
 
 });
       return(
-          <View>
-          <Text style={style.text}>Camera Screen </Text>
+          <View style={style.container}>
             <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
               <View style={style.ImageContainer}>
 
-           { this.state.ImageSource === null ? <Text>Select a Photo</Text> :
-             <Image style={styles.ImageContainer} source={this.state.ImageSource} />
-           }
-           </View>
+                   { this.state.ImageSource === null ? <Text style={style.text}>Open Camera</Text> :
+                     <Image style={styles.ImageContainer} source={this.state.ImageSource} />
+                   }
+              </View>
            </TouchableOpacity>
           </View>
 
