@@ -43,11 +43,8 @@ export default class Sponsors extends Component {
    ...StyleSheet.absoluteFillObject,
  },
  container: {
-    ...StyleSheet.absoluteFillObject,
-    height: 400,
-    width: 400,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    backgroundColor:'#636564',
+    flex:1,
   },
 
    buttonLink: {
@@ -70,8 +67,11 @@ export default class Sponsors extends Component {
                 title="Link 3"
                 onPress={()=> {Linking.openURL('http://www.obc.co.nz/')}}  />
           <Text style={style.textSponsorHeading}>Discounts </Text>
+
             <View style ={style.container}>
-      
+                <WebView source={{uri: 'https://www.earthcam.com/cams/newyork/timessquare/?cam=tsrobo3'}}
+                style={{marginTop:20}}
+                />
       </View>
           </View>
 

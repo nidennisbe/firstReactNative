@@ -15,6 +15,7 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url "https://jitpack.io" }
         google()
         mavenLocal()
         jcenter()
@@ -24,3 +25,4 @@ allprojects {
         }
     }
 }
+project.ext.set("gstAndroidRoot", "/absolute/path/to/gstreamer/android/library")

@@ -9,10 +9,21 @@
   "dependencies": {
     "react": "16.3.1",
     "react-native": "0.55.4",
+    "react-native-af-video-player": "^0.2.1",
+    "react-native-android-vitamio": "^6.0.0",
     "react-native-image-picker": "^0.26.10",
+    "react-native-ksyvideo": "^2.0.0",
     "react-native-maps": "^0.21.0",
+    "react-native-pili": "^2.3.0",
+    "react-native-rtmpview": "^1.0.4",
+    "react-native-video": "^2.2.0",
+    "react-native-video-stream": "0.0.4",
+    "react-native-vlc": "^0.7.0",
+    "react-native-vlcplayer": "^0.1.2",
     "react-native-weather": "^0.2.11",
-    "react-navigation": "^2.3.1"
+    "react-native-webrtc": "^1.63.0",
+    "react-navigation": "^2.3.1",
+    "webrtc": "^1.14.1"
   },
   "devDependencies": {
     "babel-jest": "23.0.1",

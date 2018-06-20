@@ -15,9 +15,7 @@ import {
 
 export default class Camera extends Component {
   state = {
-
       ImageSource: null,
-
     };
   static navigationOptions = {
         title: 'Camera',

@@ -123,7 +123,8 @@ export default class Home extends Component {
                                       At the OBC, we love boating as much as you do! That's why you'll
                                       find all the facilities you need to make your boating experience
                                       easy and pleasurable from fueling up to wash down  in our convenient
-                                       Auckland location.
+                                      Auckland location.
+
                               </Text>
               </View>
         </ImageBackground>
@@ -156,8 +157,8 @@ export default class Home extends Component {
                   />
                   <Button
                       style={style.buttonblue}
-                      onPress ={() => this.props.navigation.navigate("Camera")}
-                      title="Camera"
+                      onPress ={() => this.props.navigation.navigate("IpCamera")}
+                      title="LiveCam"
                       accessibilityLabel="Learn more about this purple button"
                     />
 
@@ -169,7 +170,7 @@ export default class Home extends Component {
                       <Button
                         onPress ={() => this.props.navigation.navigate("Sponsors")}
                         style={style.buttonblue}
-                        title="   "
+                        title=" "
                         />
                 </View>
 

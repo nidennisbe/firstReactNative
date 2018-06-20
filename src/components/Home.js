@@ -26,6 +26,7 @@ static navigationOptions = { header: null };
 
 
   render() {
+
     const style = StyleSheet.create({
 
     buttonblue: {

@@ -3,13 +3,19 @@ package com.myfirstapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.stremio.react.ReactVLCPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.corbt.keepawake.KCKeepAwakePackage;
+import com.github.yamill.orientation.OrientationPackage;
+import com.brentvatne.react.ReactVideoPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
+import com.oney.WebRTCModule.WebRTCModulePackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,6 +31,13 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ReactVLCPackage(),
+            new VectorIconsPackage(),
+            new KCKeepAwakePackage(),
+            new OrientationPackage(),
+            new ReactVideoPackage(),
+            new LinearGradientPackage(),
+            new WebRTCModulePackage(),
             new MapsPackage(),
             new ImagePickerPackage()
       );

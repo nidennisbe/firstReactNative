@@ -50,7 +50,6 @@ componentDidMount() {
   );
 }
   render() {
-    const uri = 'http://stackoverflow.com/questions/35531679/react-native-open-links-in-browser';
     const { region } = this.props;
     console.log(region);
     const style = StyleSheet.create({
@@ -86,8 +85,8 @@ componentDidMount() {
               region={{
                 latitude: this.state.latitude,
                 longitude:this.state.longitude,
-                latitudeDelta: 0.015,
-                longitudeDelta: 0.0121,
+                latitudeDelta: 0.115,
+                longitudeDelta: 0.0221,
               }}
             >
             </MapView>

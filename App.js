@@ -12,6 +12,7 @@ import Sponsors from './src/components/Sponsors';
 import Login from './src/components/Login';
 import Weather from './src/components/Weather';
 import Map from './src/components/Map';
+import IpCamera from './src/components/IpCamera';
 
 
 import {
@@ -43,6 +44,9 @@ const Navigation = StackNavigator({
   },
   Map: {
     screen: Map,
+  },
+  IpCamera: {
+    screen: IpCamera,
   },
 
 })
