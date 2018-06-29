@@ -1,92 +1,52 @@
 import React, { Component, PropTypes } from 'react';
 import { StackNavigator } from 'react-navigation';
+import { Title, Body, Thumbnail, Left, Badge,Card,CardItem, Item, Right, Input,Drawer,View, Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
 
 
 import {
-  View,
-  Text,
   Alert,
   Image,
   ImageBackground,
-  Button,
   StyleSheet,
+  Linking,
   TextInput,
 } from 'react-native';
 
+
+
 export default class Home extends Component {
+  static navigationOptions = { header: null };
+
 
   constructor(props) {
     super(props);
     this.state = {text: ''};
   }
+    state = { currentUser: null }
 
-  static navigationOptions = {
-        title: 'WELCOME TO OBC AUCKLAND',
-        headerTintColor: '#ffffff',
-        headerStyle: {
-          backgroundColor: '#21c5e4',
-          borderBottomColor: '#ffffff',
-        },
-        headerTitleStyle: {
-          fontSize: 18,
-          color:'#ffffff',
-        },
-    };
+
+  componentDidMount() {
+
+}
+
+
+    handleLogout = () => {
+    
+  }
+
+
 
 
   render() {
+    const { currentUser } = this.state
+
     const style = StyleSheet.create({
-
-    buttonblue: {
-    color: '#21c5e4',
-    fontWeight: 'bold',
-    fontSize: 40,
-    alignItems:'center',
-    justifyContent: 'center',
-    flex:1,
-    },
-
-    mainviewStyle: {
-    flex: 1,
-    marginTop:2,
-    alignItems:'center',
-    backgroundColor: '#000000',
-    flexDirection: 'column'
-    },
-
-    footer: {
-    position: 'absolute',
-    flex:0.1,
-    backgroundColor: '#ffffff',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    flexDirection:'row',
-    height:40,
-    alignItems:'center',
-    },
-
-    footerText: {
-    textAlign: 'center',
-    color:'#ffffff',
-    fontWeight:'bold',
-    alignItems:'center',
-    fontSize:18,
-    justifyContent: 'center',
-    },
-
     inputTextSection: {
       padding: 20,
       width:220,
       borderRadius: 5,
       backgroundColor:'#ffffff',
       marginTop:20,
-
-    },
-    backgroudImgStyle:
-    {
-      flex: 1,
-      resizeMode:'cover',
     },
 
     container: {
@@ -94,10 +54,10 @@ export default class Home extends Component {
     },
     backgroundImage: {
         flex: 1,
-        resizeMode: 'cover', // or 'stretch'
+        resizeMode: 'cover',
     },
     textContainer: {
-
+        marginTop:40,
         color:'#ffffff',
         position: 'absolute',
         top: 0,
@@ -116,64 +76,72 @@ export default class Home extends Component {
 
     });
     return(
+
       <View style={ style.container }>
         <ImageBackground source={{uri: 'http://www.obc.co.nz/media/12202/sil_12.jpg'}} style={style.backgroundImage} >
               <View style={ style.textContainer }>
-                              <Text  style={ style.textDesc }>Outboard Boating Club of Auckland
-                                      At the OBC, we love boating as much as you do! That's why you'll
-                                      find all the facilities you need to make your boating experience
-                                      easy and pleasurable from fueling up to wash down  in our convenient
-                                      Auckland location.
-
-                              </Text>
+                <Content padder>
+                <Card>
+              <CardItem header bordered>
+                <Text>WELCOME TO OBC AUCKLAND</Text>
+              </CardItem>
+              <CardItem bordered>
+                <Body>
+                  <Text>
+                    At the OBC, we love boating as much as you do!
+                    That's why you'll find all the facilities you need
+                    to make your boating experience easy and pleasurable
+                    - from fueling-up to wash-down - in our convenient Auckland location.
+                  </Text>
+                </Body>
+              </CardItem>
+            </Card>
+            </Content>
               </View>
+              <Container>
+                <Header>
+                    <Body iconLeft>
+                        <Title>Welcome OBC</Title>
+                    </Body>
+                  <Right>
+                   <Button transparent onPress={this.handleLogout}>
+                     <Icon name='log-out' />
+                   </Button>
+                 </Right>
+                </Header>
+       <Content />
+       <Footer>
+         <FooterTab style = {style.bgFooter}>
+           <Button badge vertical
+            onPress ={() => this.props.navigation.navigate("News")}>
+             <Badge ><Text>2</Text></Badge>
+             <Icon name="document" />
+               <Text>News</Text>
+           </Button>
+           <Button vertical
+             onPress ={() => this.props.navigation.navigate("Weather")}>
+             <Icon name="cloud" />
+              <Text>Weath.</Text>
+           </Button>
+           <Button vertical active
+              onPress ={() => this.props.navigation.navigate("Map")}>
+             <Icon active name="map" />
+             <Text>Map</Text>
+           </Button>
+           <Button vertical
+             onPress ={() => this.props.navigation.navigate("IpCamera")}>
+             <Icon name="camera" />
+             <Text>Cam</Text>
+           </Button>
+           <Button vertical
+             onPress ={() => this.props.navigation.navigate("Sponsors")}>
+             <Icon name="link" />
+             <Text>Link</Text>
+           </Button>
+         </FooterTab>
+       </Footer>
+     </Container>
         </ImageBackground>
-
-
-
-
-          <View style={style.footer}>
-
-            <Button
-                onPress ={() => this.props.navigation.navigate("News")}
-                style={style.buttonblue}
-                title="News"
-                color= "#21c5e4"
-                accessibilityLabel="Learn more about this purple button"
-              />
-
-          <Button
-                onPress ={() => this.props.navigation.navigate("Weather")}
-                style={style.buttonblue}
-                title="Weather"
-                accessibilityLabel="Learn more about this purple button"
-              />
-
-              <Button
-                    style={style.buttonblue}
-                    onPress ={() => this.props.navigation.navigate("Map")}
-                    title="Map"
-                    accessibilityLabel="Learn more about this purple button"
-                  />
-                  <Button
-                      style={style.buttonblue}
-                      onPress ={() => this.props.navigation.navigate("IpCamera")}
-                      title="LiveCam"
-                      accessibilityLabel="Learn more about this purple button"
-                    />
-
-                    <Button
-                      onPress ={() => this.props.navigation.navigate("Sponsors")}
-                      style={style.buttonblue}
-                      title="Sponsors"
-                      />
-                      <Button
-                        onPress ={() => this.props.navigation.navigate("Sponsors")}
-                        style={style.buttonblue}
-                        title=" "
-                        />
-                </View>
-
       </View>
 );
 

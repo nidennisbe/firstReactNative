@@ -4,7 +4,7 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { StackNavigator} from 'react-navigation';
+import { StackNavigator, DrawerNavigator,DrawerItems} from 'react-navigation';
 import Home from './src/components/Home';
 import News from './src/components/News';
 import Camera from './src/components/Camera';
@@ -13,6 +13,7 @@ import Login from './src/components/Login';
 import Weather from './src/components/Weather';
 import Map from './src/components/Map';
 import IpCamera from './src/components/IpCamera';
+import SignUp from './src/components/SignUp';
 
 
 import {
@@ -22,6 +23,8 @@ import {
   View,
   Button,
 } from 'react-native';
+
+
 
 const Navigation = StackNavigator({
   Home:{
@@ -48,6 +51,11 @@ const Navigation = StackNavigator({
   IpCamera: {
     screen: IpCamera,
   },
+  SignUp: {
+    screen: SignUp,
+  },
+  
+
 
 })
 export default Navigation;

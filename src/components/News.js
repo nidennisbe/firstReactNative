@@ -23,8 +23,7 @@ export default class News extends Component {
         title: 'News',
         headerTintColor: '#ffffff',
         headerStyle: {
-          backgroundColor: '#e9c724',
-          borderBottomColor: '#ffffff',
+          backgroundColor: '#3f38c2',
         },
         headerTitleStyle: {
           fontSize: 18,
@@ -44,14 +43,11 @@ export default class News extends Component {
     container: {
       flex:1,
       backgroundColor: '#fefefe',
-    }
+    },
 });
       return(
-          <View style={style.container} >
-            <WebView source={{uri: 'http://www.obc.co.nz/blog/'}}
-            style={{marginTop:20}}
-            />
-
+          <View style={style.container}>
+            <WebView source={{uri: 'http://www.obc.co.nz/blog/'}}/>
           </View>
 
       );

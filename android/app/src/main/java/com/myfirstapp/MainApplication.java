@@ -1,9 +1,9 @@
 package com.myfirstapp;
 
 import android.app.Application;
-
 import com.facebook.react.ReactApplication;
-import com.stremio.react.ReactVLCPackage;
+import io.invertase.firebase.RNFirebasePackage;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.corbt.keepawake.KCKeepAwakePackage;
 import com.github.yamill.orientation.OrientationPackage;
@@ -31,7 +31,6 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new ReactVLCPackage(),
             new VectorIconsPackage(),
             new KCKeepAwakePackage(),
             new OrientationPackage(),
@@ -39,7 +38,8 @@ public class MainApplication extends Application implements ReactApplication {
             new LinearGradientPackage(),
             new WebRTCModulePackage(),
             new MapsPackage(),
-            new ImagePickerPackage()
+            new ImagePickerPackage(),
+
       );
     }
 

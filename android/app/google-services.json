@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "235661406640",
+    "firebase_url": "https://ocbauckland-1528929747988.firebaseio.com",
+    "project_id": "ocbauckland-1528929747988",
+    "storage_bucket": "ocbauckland-1528929747988.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235661406640:android:7cfb0471169e503d",
+        "android_client_info": {
+          "package_name": "com.myfirstapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235661406640-5th78rrardb7s88ostfvlv5ufs3ciisn.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "235661406640-5th78rrardb7s88ostfvlv5ufs3ciisn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiAH6vnxRUiIrOTeUT7RkpJIqVGNHzD34"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

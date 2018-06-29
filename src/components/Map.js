@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import MapView from 'react-native-maps';
+import { Badge,Card,CardItem, Item, Right, Input,Drawer,View, Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import NightMapStyles from './MapStyles/NightMapStyles.json';
 
 
 import {
-  View,
-  Text,
   Alert,
   Image,
-  Button,
   StyleSheet,
-  WebView,
   Linking,
 } from 'react-native';
 
@@ -21,18 +19,24 @@ export default class Map extends Component {
     longitude: null,
     error: null,
 };
+var markers = [{
+  latitude:-36.862674,
+  longitude:174.760145,
+  title: 'System7'
+}];
   }
   static navigationOptions = {
         title: 'Map',
         headerTintColor: '#ffffff',
         headerStyle: {
-          backgroundColor: '#2F95D6',
+          backgroundColor: '#3f38c2',
           borderBottomColor: '#ffffff',
         },
         headerTitleStyle: {
           fontSize: 18,
         },
     };
+
 
 
 
@@ -77,19 +81,28 @@ componentDidMount() {
    }
 });
       return(
-
             <View style ={style.container}>
             <MapView
               showsUserLocation={true}
+              customMapStyle={NightMapStyles}
               style={style.map}
               region={{
-                latitude: this.state.latitude,
-                longitude:this.state.longitude,
-                latitudeDelta: 0.115,
-                longitudeDelta: 0.0221,
+                latitude:-36.862674,
+                longitude:174.760145,
+                latitudeDelta: 0.1115,
+                longitudeDelta: 0.1221,
               }}
-            >
-            </MapView>
+              >
+              <MapView.Marker
+
+           image={require('../asset/pin.png')}
+           coordinate={{
+             latitude: 37.78825,
+             longitude: -122.4324}}
+           title={"title"}
+           description={"description"}
+        />
+    </MapView>
           </View>
 
 

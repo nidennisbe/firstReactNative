@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Video from 'react-native-af-video-player';
+import Video from 'react-native-video';
 
 
 
@@ -28,7 +28,7 @@ export default class Camera extends Component {
         title: 'Stream LiveCam',
         headerTintColor: '#ffffff',
         headerStyle: {
-          backgroundColor: '#2F95D6',
+          backgroundColor: '#3f38c2',
           borderBottomColor: '#ffffff',
           borderBottomWidth: 3,
         },
@@ -86,17 +86,22 @@ export default class Camera extends Component {
       return(
         <View style={style.container}>
           <Video
-            autoPlay
-            ref={(ref) => { this.video = ref }}
-            url={url}
-            title={title}
-            />
-            <Button onPress={() => this.play()}
-               title="Play">
-            </Button>
-            <Button onPress={() => this.pause()}
-                   title="Pause">
-            </Button>
+  source={{uri: "http://cdn.goluk.cn/video/t1_2.mp4"}} // Can be a URL or a local file.
+  rate={1.0}                   // 0 is paused, 1 is normal.
+  volume={1.0}                 // 0 is muted, 1 is normal.
+  muted={false}                // Mutes the audio entirely.
+  paused={false}               // Pauses playback entirely.
+  resizeMode="cover"           // Fill the whole screen at aspect ratio.
+  repeat={true}                // Repeat forever.
+  playInBackground={false}     // Audio continues to play when aentering background.
+  playWhenInactive={false}     // [iOS] Video continues to play whcontrol or notification center are shown.
+  onLoadStart={this.loadStart} // Callback when video starts to load
+  onLoad={this.setDuration}    // Callback when video loads
+  onProgress={this.setTime}    // Callback every ~250ms with currentTime
+  onEnd={this.onEnd}           // Callback when playback finishes
+  onError={this.videoError}    // Callback when video cannot be loaded
+  style={style.backgroundVideo}
+/>
         </View>
 
 
